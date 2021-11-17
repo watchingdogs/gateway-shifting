@@ -33,8 +33,8 @@ try:
 
 
     def coords(r, id):
-        x = r / 96 * l[id + 5]
-        z = r / 96 * l[id]
+        x = r / 96 * l[id - 15]
+        z = r / 96 * l[id - 20]
         return [int(x), int(z)]  # Litemapy can not work with floats.
 
 
