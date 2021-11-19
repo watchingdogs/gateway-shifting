@@ -8,7 +8,7 @@ How to use the script?
     The gateway number can be from 0 to 19, "0 is east of the exit portal, and numbers increase clockwise."
     The radius must be between 768 and 1280.
 
-The code is available under the GPL-3.0 license.
+    The code is available under the GPL-3.0 license.
 """
 
 try:
@@ -24,7 +24,8 @@ try:
     assert 1280 >= r >= 768, "Radius must be between 768 and 1280."
 
     reg = Region(-1280, 0, -1280, 2560, 1, 2560)
-    vectorschem = reg.as_schematic(name=f"Gateway {gatewayid} shifting", author="@watchingdogs",description="Check GitHub for help.")
+    vectorschem = reg.as_schematic(name=f"Gateway {gatewayid}; radius {r}", author="@watchingdogs",
+                                   description="Check GitHub for help.")
     l = []
 
     for x in range(20):
@@ -34,7 +35,7 @@ try:
 
     def coords(r, id):
         x = r / 96 * l[id - 15]
-        z = r / 96 * l[id - 20]
+        z = r / 96 * l[id-20]
         return [int(x), int(z)]  # Litemapy can not work with floats.
 
 
@@ -57,11 +58,10 @@ try:
             count += 1
 
     print("Writing schematic to disk...")
-    name = time.strftime('%Y-%m-%d_%H-%M-%S')
     start = time.time()
-    vectorschem.save(f"gs{name}.litematic")
+    vectorschem.save(f"gs{gatewayid}-{r}.litematic")
     end = time.time()
-    print(f"Saved to gs{name}.litematic. It took {round(end-start, 2)} seconds.")
+    print(f"Saved to gs{gatewayid}-{r}.litematic. It took {round(end-start, 2)} seconds.")
 
 except IndexError:
     print("Wrong input. For help open the file or the README.")
