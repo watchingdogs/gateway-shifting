@@ -1,0 +1,2 @@
+nbtlib==1.12.1
+litemapy==0.3.1a0
