@@ -1,3 +1,6 @@
+# Notice
+I made this tool from all the explinations I could find in YouTube videos. However they were not accurate, thus this tool is inaccurate as well. If you really want to do some gateway shifting you can ask around in technical Minecraft servers for pre-made schematics, and **if you want to recreate the tool**, you could take a look at decompiled Minecraft code, with minimal programming knowledge you can read java code and understand it's logic as if you were reading plain text, and write a tool based on that.
+
 # What is gateway shifting?
 Gateway shifting is a process to influence where an end gateway generates.
 And what does *this* mean? In Minecraft, after you kill the ender dragon, an end gateway generates on the main island. When the game generates this gateway block, it's empty by default. When for example a player or an ender pearl goes through it, the game draws a line from x 0 z 0 through this gateway and looks around at radius 1024 to see if there is an end island there, it can generate above. Naturally, the game wants to find the edge of the end islands, so it jumps back 256 blocks on the line and starts to search from there along the line for 512 blocks until it finds an endstone block at or above Y 30. Meaning, that **you can generate exit gateways from a distance of 768 blocks to 1280 blocks from 0-0**.
